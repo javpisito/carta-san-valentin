@@ -92,3 +92,44 @@ button:hover { background-color: #d62828; }
   from { transform: translateY(0); opacity: 1; }
   to   { transform: translateY(-120vh); opacity: 0; }
 }
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.lightbox.oculto { display: none; }
+
+.lightbox-contenido {
+  background: #fff;
+  padding: 14px;
+  border-radius: 14px;
+  max-width: 90%;
+  width: 420px;
+  text-align: center;
+  animation: aparecer .25s ease-out;
+}
+
+.lightbox-contenido img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.lightbox-texto {
+  margin-top: 10px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.cerrar {
+  float: right;
+  cursor: pointer;
+  font-size: 18px;
+  opacity: .7;
+}
+.cerrar:hover { opacity: 1; }

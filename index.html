@@ -16,16 +16,12 @@
       Contigo todo se siente más ligero y más bonito.
     </p>
 
-    <p>
-      Este pequeño detalle es solo una parte de lo mucho que significas para mí.
-    </p>
-
     <div class="galeria">
-      <img src="img/n1.jpeg" alt="Nosotros 1" class="foto">
-      <img src="img/n2.jpeg" alt="Nosotros 2" class="foto">
-      <img src="img/n3.jpeg" alt="Nosotros 3" class="foto">
-      <img src="img/n4.jpeg" alt="Nosotros 4" class="foto">
-      <img src="img/n5.jpeg" alt="Nosotros 5" class="foto">
+      <img src="img/n1.jpeg" alt="Nosotros 1" class="foto" data-id="n1">
+      <img src="img/n2.jpeg" alt="Nosotros 2" class="foto" data-id="n2">
+      <img src="img/n3.jpeg" alt="Nosotros 3" class="foto" data-id="n3">
+      <img src="img/n4.jpeg" alt="Nosotros 4" class="foto" data-id="n4">
+      <img src="img/n5.jpeg" alt="Nosotros 5" class="foto" data-id="n5">
     </div>
 
     <div class="acciones">
@@ -37,6 +33,15 @@
       Con amor,<br>
       <strong>Jordan</strong>
     </p>
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox oculto">
+    <div class="lightbox-contenido">
+      <span id="cerrar" class="cerrar">✖</span>
+      <img id="lightbox-img" src="" alt="Imagen grande">
+      <p id="lightbox-texto" class="lightbox-texto"></p>
+    </div>
   </div>
 
   <script src="script.js"></script>

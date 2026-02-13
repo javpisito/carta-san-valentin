@@ -4,9 +4,8 @@ const btnCorazones = document.getElementById("btn-corazones");
 btnSorpresa.addEventListener("click", () => {
   const card = document.querySelector(".card");
   card.classList.remove("pop");
-  void card.offsetWidth; // reset animación
+  void card.offsetWidth;
   card.classList.add("pop");
-
   alert("Eres lo mejor que me ha pasado ❤️");
 });
 
@@ -21,15 +20,36 @@ function crearCorazon() {
   c.style.left = Math.random() * 100 + "vw";
   c.style.animationDuration = (2 + Math.random() * 2) + "s";
   document.body.appendChild(c);
-
   setTimeout(() => c.remove(), 4000);
 }
 
-// Animación al hacer clic en las fotos
+// Mapa de textos fijos por imagen (edítalos a tu gusto)
+const textos = {
+  n1: "Nuestro primer recuerdo juntos. Aquí supe que algo bonito estaba empezando.",
+  n2: "Un día sencillo contigo se siente especial.",
+  n3: "Tu sonrisa es mi lugar favorito.",
+  n4: "Gracias por acompañarme incluso cuando no es fácil.",
+  n5: "Contigo quiero seguir sumando momentos."
+};
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const lightboxTexto = document.getElementById("lightbox-texto");
+const cerrar = document.getElementById("cerrar");
+
 document.querySelectorAll(".foto").forEach(img => {
   img.addEventListener("click", () => {
-    img.classList.remove("pop");
-    void img.offsetWidth;
-    img.classList.add("pop");
+    const id = img.dataset.id; // n1, n2, ...
+    lightboxImg.src = img.src;
+    lightboxTexto.textContent = textos[id] || "";
+    lightbox.classList.remove("oculto");
   });
+});
+
+cerrar.addEventListener("click", () => {
+  lightbox.classList.add("oculto");
+});
+
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) lightbox.classList.add("oculto");
 });
