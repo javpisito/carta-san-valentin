@@ -6,7 +6,7 @@ btnSorpresa.addEventListener("click", () => {
   card.classList.remove("pop");
   void card.offsetWidth;
   card.classList.add("pop");
-  alert("Eres lo mejor que me ha pasado ❤️");
+  alert("Eres lo mejor que me pudo pasar, siempre me siento tan afortunado de tenerte cerca.");
 });
 
 btnCorazones.addEventListener("click", () => {
@@ -25,11 +25,11 @@ function crearCorazon() {
 
 // Mapa de textos fijos por imagen (edítalos a tu gusto)
 const textos = {
-  n1: "Nuestro primer recuerdo juntos. Aquí supe que algo bonito estaba empezando.",
-  n2: "Un día sencillo contigo se siente especial.",
-  n3: "Tu sonrisa es mi lugar favorito.",
-  n4: "Gracias por acompañarme incluso cuando no es fácil.",
-  n5: "Contigo quiero seguir sumando momentos."
+  n1: "Una de las mejores fotos de nosotros, me encanta y wow, tambien es de los mejores momentos.",
+  n2: "Un dia aunque dificil creo que nos ayudo mucho.",
+  n3: "Me encanta verte feliz y tu carita hermosa me pone demasiado feliz. <3",
+  n4: "Tamos locos verda???",
+  n5: "Todo lo superaremos, creeme amol."
 };
 
 const lightbox = document.getElementById("lightbox");
