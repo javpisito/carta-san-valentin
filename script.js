@@ -53,3 +53,15 @@ cerrar.addEventListener("click", () => {
 lightbox.addEventListener("click", (e) => {
   if (e.target === lightbox) lightbox.classList.add("oculto");
 });
+
+// Abrir lightbox desde botones tipo carta
+document.querySelectorAll(".btn-carta").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const id = btn.dataset.id; // n1..n5
+    const ruta = `img/${id}.jpeg`; // ajusta si usas .jpg
+
+    lightboxImg.src = ruta;
+    lightboxTexto.textContent = textos[id] || "";
+    lightbox.classList.remove("oculto");
+  });
+});
