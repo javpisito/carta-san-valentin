@@ -65,3 +65,39 @@ document.querySelectorAll(".btn-carta").forEach(btn => {
     lightbox.classList.remove("oculto");
   });
 });
+// ⏳ Contador de días juntos (CONFIGURA TU FECHA AQUÍ)
+const FECHA_INICIO = new Date("2025-11-18"); // YYYY-MM-DD
+const contador = document.getElementById("contador-dias");
+
+function actualizarContador() {
+  const hoy = new Date();
+  const diff = hoy - FECHA_INICIO;
+  const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+  contador.textContent = `Llevamos ${dias} días juntos ⏳`;
+}
+actualizarContador();
+
+// 🌙 Modo noche (persistente)
+const toggleNoche = document.getElementById("toggle-noche");
+const modoGuardado = localStorage.getItem("modo-noche") === "true";
+
+if (modoGuardado) {
+  document.body.classList.add("noche");
+  toggleNoche.checked = true;
+}
+
+toggleNoche.addEventListener("change", () => {
+  document.body.classList.toggle("noche", toggleNoche.checked);
+  localStorage.setItem("modo-noche", toggleNoche.checked);
+});
+
+// 🔔 Sonido al abrir carta
+const audioCarta = document.getElementById("sonido-carta");
+
+// Llama esto cuando abras el lightbox (desde botones tipo carta)
+function reproducirSonidoCarta() {
+  if (!audioCarta) return;
+  audioCarta.currentTime = 0;
+  audioCarta.volume = 0.25; // sutil
+  audioCarta.play().catch(() => {}); // evita errores por políticas del navegador
+}

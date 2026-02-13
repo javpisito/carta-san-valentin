@@ -161,3 +161,82 @@ button:hover { background-color: #d62828; }
 .btn-carta:active {
   transform: scale(.98);
 }
+.contador {
+  margin-top: 6px;
+  font-size: 13px;
+  opacity: .75;
+}
+
+/* Toggle switch */
+.controles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 8px 0 12px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+.switch input { display: none; }
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: #ddd;
+  transition: .2s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  top: 3px;
+  background: white;
+  transition: .2s;
+  border-radius: 50%;
+}
+
+.switch input:checked + .slider {
+  background: #333;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+/* Modo noche */
+body.noche {
+  background: linear-gradient(135deg, #1f2933, #0b1220);
+}
+
+body.noche .card {
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+body.noche p,
+body.noche .firma,
+body.noche .lightbox-texto {
+  color: #e5e7eb;
+}
+
+body.noche button,
+body.noche .btn-carta {
+  background: #334155;
+  color: #e5e7eb;
+  border-color: #64748b;
+}
+
+body.noche .lightbox-contenido {
+  background: #0f172a;
+}
