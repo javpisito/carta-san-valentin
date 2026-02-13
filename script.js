@@ -66,7 +66,7 @@ document.querySelectorAll(".btn-carta").forEach(btn => {
   });
 });
 // ⏳ Contador de días juntos (CONFIGURA TU FECHA AQUÍ)
-const FECHA_INICIO = new Date("2025-11-18"); // YYYY-MM-DD
+const FECHA_INICIO = new Date("2025-10-18"); // YYYY-MM-DD
 const contador = document.getElementById("contador-dias");
 
 function actualizarContador() {
